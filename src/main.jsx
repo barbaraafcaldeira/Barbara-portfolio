@@ -12,6 +12,8 @@ const projects = [
     impact: "Built end-to-end cloud architecture, AI-assisted risk evaluation, and a guided support flow.",
     link: "https://d275eiga52hnuu.cloudfront.net",
     linkLabel: "View MamaMind page",
+    demoLink: "#",
+    demoLabel: "Demo",
     architectureImage: "/images/mamamind-architecture.jpeg",
     architectureAlt: "MamaMind architecture diagram showing the React app, AWS services, and chatbot flow",
     details: [
@@ -48,6 +50,23 @@ const projects = [
       "This portfolio is the presentation layer for my technical work, designed to clearly explain MamaMind, the AWS architecture, and the skills developed through the project.",
       "It is built with React and Vite, with a deployment path prepared for GitHub and AWS Amplify Hosting.",
       "The focus is on making the finished project, technical stack, and learning outcomes easy for viewers to scan and understand.",
+    ],
+  },
+  {
+    title: "Smart Baby Room Monitor",
+    type: "IoT monitoring project",
+    description:
+      "A smart baby room monitor project developed with the Wokwi simulator to explore hardware monitoring, room conditions, and IoT-style alerting.",
+    stack: ["Wokwi", "IoT", "Embedded systems", "Sensors", "Simulation", "GitHub"],
+    impact: "Explored how simulated hardware can be used to design safer, more responsive monitoring systems for baby room conditions.",
+    link: "https://github.com/barbaraafcaldeira/smart-baby-room-monitor",
+    linkLabel: "View GitHub repository",
+    demoLink: "#",
+    demoLabel: "Demo",
+    details: [
+      "This project explores the idea of a smart baby room monitor, designed to help track environmental conditions in a baby's room and support a safer and more responsive space.",
+      "I used the Wokwi simulator to model the hardware and test the project in a virtual environment, which made it possible to explore IoT concepts without requiring the physical components at every stage.",
+      "The project focuses on combining monitoring, simulation, and practical problem solving, while building my confidence with embedded systems, sensor-based logic, and connected technology design.",
     ],
   },
 ];
@@ -163,6 +182,11 @@ function Portfolio() {
                 <a className="project-link" href={project.link}>
                   {project.linkLabel}
                 </a>
+                {project.demoLink && (
+                  <a className="project-link" href={project.demoLink}>
+                    {project.demoLabel}
+                  </a>
+                )}
                 <button className="project-detail-button" type="button" onClick={() => setSelectedProject(project)}>
                   More details
                 </button>
