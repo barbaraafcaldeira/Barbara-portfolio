@@ -2,76 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
-const projects = [
-  {
-    title: "MamaMind",
-    type: "Full-stack AWS wellbeing app",
-    description:
-      "A secure postpartum journaling platform that combines React, Cognito, API Gateway, Lambda, DynamoDB, Comprehend, Bedrock, and Lex to offer risk-aware support.",
-    stack: ["React", "AWS Amplify", "Cognito", "Lambda", "DynamoDB", "Bedrock", "Lex"],
-    impact: "Built end-to-end cloud architecture, AI-assisted risk evaluation, and a guided support flow.",
-    link: "https://d275eiga52hnuu.cloudfront.net",
-    linkLabel: "View MamaMind page",
-    demoLink: "#",
-    demoLabel: "Demo",
-    architectureImage: "/images/mamamind-architecture.jpeg",
-    architectureAlt: "MamaMind architecture diagram showing the React app, AWS services, and chatbot flow",
-    details: [
-      "This project presents MamaMind, a cloud-based journaling and support prototype designed to support postpartum wellbeing. The system addresses the challenge of identifying early signs of emotional distress after childbirth, particularly when mothers express feelings indirectly or through mixed emotions.",
-      "MamaMind was developed using a React frontend and AWS services, including Cognito, API Gateway, Lambda, DynamoDB, Comprehend, Bedrock, Lex, S3, CloudFront, IAM, and CloudWatch.",
-      "The application allows users to sign in securely, write journal entries, receive sentiment and contextual risk feedback, complete an EPDS-style check-in, view explainable recommendations, and optionally interact with Petra, a chatbot assistant. MamaMind is not intended as a diagnostic tool, but demonstrates how cloud-based AI can support reflection, awareness, and signposting.",
-    ],
-  },
-  {
-    title: "Risk Evaluation Pipeline",
-    type: "Serverless data workflow",
-    description:
-      "CSV-based evaluation tooling for comparing rule-based, AI-assisted, and hybrid risk scoring approaches against test sets.",
-    stack: ["Node.js", "Lambda", "Amazon Bedrock", "Amazon Comprehend", "CSV testing"],
-    impact: "Created repeatable evaluation assets to make model behaviour easier to inspect and improve.",
-    link: "#",
-    linkLabel: "View project details",
-    details: [
-      "This work was developed as part of the MamaMind project to compare different approaches for identifying risk in journal-style text.",
-      "I prepared CSV test sets and Lambda-based evaluation scripts to compare rule-based scoring, Amazon Comprehend sentiment analysis, Bedrock-assisted evaluation, and hybrid logic.",
-      "The goal was to make the AI behaviour easier to inspect, test, and explain before connecting it to the user-facing MamaMind experience.",
-    ],
-  },
-  {
-    title: "AWS Architecture Portfolio",
-    type: "Deployment-ready frontend",
-    description:
-      "A focused portfolio site prepared for GitHub-based deployment to AWS Amplify Hosting with automated builds and HTTPS.",
-    stack: ["React", "Vite", "GitHub", "AWS Amplify", "CloudFront"],
-    impact: "Designed to present technical projects clearly for recruiters, assessors, and collaborators.",
-    link: "#deploy",
-    linkLabel: "See deploy plan",
-    details: [
-      "This portfolio is the presentation layer for my technical work, designed to clearly explain MamaMind, the AWS architecture, and the skills developed through the project.",
-      "It is built with React and Vite, with a deployment path prepared for GitHub and AWS Amplify Hosting.",
-      "The focus is on making the finished project, technical stack, and learning outcomes easy for viewers to scan and understand.",
-    ],
-  },
-  {
-    title: "Smart Baby Room Monitor",
-    type: "IoT monitoring project",
-    description:
-      "A smart baby room monitor project developed with the Wokwi simulator to explore hardware monitoring, room conditions, and IoT-style alerting.",
-    stack: ["Wokwi", "IoT", "Embedded systems", "Sensors", "Simulation", "GitHub"],
-    impact: "Explored how simulated hardware can be used to design safer, more responsive monitoring systems for baby room conditions.",
-    link: "https://github.com/barbaraafcaldeira/smart-baby-room-monitor",
-    linkLabel: "View GitHub repository",
-    demoLink: "#",
-    demoLabel: "Demo",
-    details: [
-      "This project explores the idea of a smart baby room monitor, designed to help track environmental conditions in a baby's room and support a safer and more responsive space.",
-      "I used the Wokwi simulator to model the hardware and test the project in a virtual environment, which made it possible to explore IoT concepts without requiring the physical components at every stage.",
-      "The project focuses on combining monitoring, simulation, and practical problem solving, while building my confidence with embedded systems, sensor-based logic, and connected technology design.",
-    ],
-  },
-];
-
-const skills = [
+const hardSkills = [
   "React component development",
   "JavaScript application logic",
   "AWS serverless architecture",
@@ -90,16 +21,147 @@ const skills = [
   "Technical documentation",
 ];
 
+const softSkills = [
+  "Communication",
+  "Teamwork",
+  "Adaptability",
+  "Problem solving",
+  "Organisation",
+  "Time management",
+  "Leadership",
+  "Attention to detail",
+];
+
+const aboutPhotos = [
+  { src: "/images/image-5.jpeg", alt: "Barbara Caldeira smiling" },
+  { src: "/images/about-2.jpeg", alt: "Barbara Caldeira smiling wearing a headset" },
+  { src: "/images/about-3.jpeg", alt: "Barbara Caldeira outdoors in London" },
+  { src: "/images/about-4.jpeg", alt: "Barbara Caldeira smiling at work" },
+  { src: "/images/about-5.jpeg", alt: "Barbara Caldeira seated in a cafe" },
+  { src: "/images/about-6.jpeg", alt: "Barbara Caldeira outdoors with family" },
+];
+
+const projects = [
+  {
+    title: "MamaMind",
+    type: "Full-stack AWS wellbeing app",
+    description:
+      "A secure postpartum journaling platform that combines React, Cognito, API Gateway, Lambda, DynamoDB, Comprehend, Bedrock, and Lex to offer risk-aware support.",
+    stack: [
+      "React",
+      "Amazon Cognito",
+      "Amazon API Gateway",
+      "AWS Lambda",
+      "Amazon DynamoDB",
+      "Amazon Comprehend",
+      "Amazon Bedrock",
+      "Amazon Lex",
+      "Amazon S3",
+      "Amazon CloudFront",
+    ],
+    impact: "Built end-to-end cloud architecture, AI-assisted risk evaluation, and a guided support flow.",
+    link: "https://d275eiga52hnuu.cloudfront.net",
+    linkLabel: "View MamaMind page",
+    demoLink: "#",
+    demoLabel: "Demo",
+    architectureImage: "/images/mamamind-architecture.jpeg",
+    architectureAlt: "MamaMind architecture diagram showing the React app, AWS services, and chatbot flow",
+    details: [
+      "This project presents MamaMind, a cloud-based journaling and support prototype designed to support postpartum wellbeing. The system addresses the challenge of identifying early signs of emotional distress after childbirth, particularly when mothers express feelings indirectly or through mixed emotions.",
+      "MamaMind was developed using a React frontend and AWS services, including Cognito, API Gateway, Lambda, DynamoDB, Comprehend, Bedrock, Lex, S3, CloudFront, IAM, and CloudWatch.",
+      "The application allows users to sign in securely, write journal entries, receive sentiment and contextual risk feedback, complete an EPDS-style check-in, view explainable recommendations, and optionally interact with Petra, a chatbot assistant. MamaMind is not intended as a diagnostic tool, but demonstrates how cloud-based AI can support reflection, awareness, and signposting.",
+    ],
+  },
+  {
+    title: "Risk Evaluation Pipeline",
+    type: "Serverless data workflow",
+    description:
+      "An evaluation workflow created to compare different approaches for detecting mental health distress patterns in journal-style text and to understand how each method performed.",
+    stack: ["AWS Lambda", "Amazon Bedrock", "Amazon Comprehend", "CSV test sets", "Rule-based logic", "Hybrid scoring"],
+    impact: "Built a repeatable evaluation process to test how different methods identify distress indicators and to support clearer model comparison.",
+    link: "/docs/mamamind-evaluation-findings.pdf",
+    linkLabel: "View main findings",
+    details: [
+      "This work was developed as part of the MamaMind project to compare different approaches and evaluate how well they performed in identifying mental health distress patterns within journal-style text.",
+      "I collected and structured evaluation data in CSV test sets so that different distress scenarios, wording styles, and emotional expressions could be tested in a more consistent and measurable way.",
+      "To carry out the evaluation, I used Lambda-based scripts together with rule-based logic, Amazon Comprehend sentiment analysis, Amazon Bedrock-assisted classification, and hybrid scoring methods, making it easier to inspect results, compare behaviour, and understand which approach was most reliable for the user-facing MamaMind system.",
+    ],
+  },
+  {
+    title: "Professional Portfolio Website",
+    type: "Deployment-ready frontend",
+    description:
+      "A portfolio website built to present my projects through a responsive frontend, structured content, and cloud-based deployment.",
+    stack: ["React", "Vite", "GitHub", "AWS Amplify", "CloudFront"],
+    impact: "Built as a practical frontend project using modern web tools and deployment services to create a clear and accessible presentation of my work.",
+    link: "#",
+    linkLabel: "Full architecture",
+    architectureImage: "/images/portfolio-architecture.jpeg",
+    architectureAlt: "Professional portfolio website architecture showing React, GitHub, AWS Amplify, CloudFront, and users",
+    details: [
+      "This project was developed as a standalone React application using Vite to create a fast, responsive, and maintainable frontend structure.",
+      "I used component-based design, custom CSS styling, project carousels, modal views, and interactive sections to organise the content and improve how each project is presented.",
+      "The portfolio is connected to GitHub and prepared for deployment through AWS Amplify and CloudFront, making it a practical example of both frontend development and cloud-based publishing.",
+    ],
+  },
+  {
+    title: "Smart Baby Room Monitor",
+    type: "IoT monitoring project",
+    description:
+      "A smart baby room monitoring concept designed to track nursery conditions through simulated sensors, support a clearer user dashboard, and explore how IoT systems can improve everyday safety and awareness.",
+    stack: ["Wokwi", "IoT", "Embedded systems", "Sensors", "Simulation", "GitHub"],
+    impact: "Explored how simulated hardware can be used to design safer, more responsive monitoring systems for baby room conditions.",
+    link: "https://github.com/barbaraafcaldeira/smart-baby-room-monitor",
+    linkLabel: "View GitHub repository",
+    extraLinks: [
+      {
+        href: "/docs/smart-baby-room-monitor-implementation.pdf",
+        label: "See implementation",
+      },
+      {
+        href: "https://production.dvvxbfugcqfz7.amplifyapp.com",
+        label: "View user dashboard",
+      },
+      {
+        href: "https://wokwi.com/projects/465187778917243905",
+        label: "See simulator in Wokwi",
+      },
+    ],
+    details: [
+      "This project explores the idea of a smart baby room monitor, designed to help track environmental conditions in a baby's room and support a safer and more responsive space.",
+      "I used the Wokwi simulator to model the hardware and test the project in a virtual environment, which made it possible to explore IoT concepts without requiring the physical components at every stage.",
+      "The project focuses on combining monitoring, simulation, and practical problem solving, while building my confidence with embedded systems, sensor-based logic, and connected technology design.",
+    ],
+  },
+];
+
 function Portfolio() {
   const [selectedProject, setSelectedProject] = React.useState(null);
+  const [selectedArchitectureProject, setSelectedArchitectureProject] = React.useState(null);
+  const [activeProjectIndex, setActiveProjectIndex] = React.useState(0);
+  const [activePhotoIndex, setActivePhotoIndex] = React.useState(0);
+  const activeProject = projects[activeProjectIndex];
+  const activePhoto = aboutPhotos[activePhotoIndex];
+
+  const showPreviousProject = () => {
+    setActiveProjectIndex((current) => (current === 0 ? projects.length - 1 : current - 1));
+  };
+
+  const showNextProject = () => {
+    setActiveProjectIndex((current) => (current === projects.length - 1 ? 0 : current + 1));
+  };
+
+  const showPreviousPhoto = () => {
+    setActivePhotoIndex((current) => (current === 0 ? aboutPhotos.length - 1 : current - 1));
+  };
+
+  const showNextPhoto = () => {
+    setActivePhotoIndex((current) => (current === aboutPhotos.length - 1 ? 0 : current + 1));
+  };
 
   return (
     <main className="portfolio">
       <nav className="topbar" aria-label="Portfolio navigation">
-        <a className="brand" href="#home" aria-label="Portfolio home">
-          <span className="brand-mark">B</span>
-          <span>Barbara Caldeira</span>
-        </a>
         <div className="nav-links">
           <a href="#about">About me</a>
           <a href="#projects">Projects</a>
@@ -110,8 +172,8 @@ function Portfolio() {
 
       <section className="hero" id="home">
         <div className="hero-copy">
-          <p className="eyebrow">Computer Science Student</p>
-          <h1>Professional Portfolio</h1>
+          <p className="eyebrow">Professional Portfolio</p>
+          <h1>Barbara A F Caldeira</h1>
           <p className="hero-text">
             A professional portfolio presenting my academic projects, cloud computing experience, and growing skills in
             software development.
@@ -129,8 +191,9 @@ function Portfolio() {
 
       <section className="section intro">
         <p>
-          I am focused on building reliable digital products with clear user journeys, clean React interfaces, and cloud
-          services that solve real problems. This portfolio is ready to deploy from GitHub into AWS Amplify Hosting.
+          This portfolio website was created as a dedicated space to present my current work, academic projects, and
+          technical development in a clear and professional way. It gives recruiters, lecturers, and collaborators a
+          simple way to explore my projects, follow my progress, and engage with the work I am building.
         </p>
       </section>
 
@@ -155,9 +218,28 @@ function Portfolio() {
             enjoy contributing to projects where I can keep learning and add real value.
           </p>
         </div>
-        <figure className="about-image">
-          <img src="/images/image-5.jpeg" alt="Barbara Caldeira smiling" />
-        </figure>
+        <div className="about-gallery">
+          <button className="carousel-arrow about-arrow" type="button" aria-label="Previous photo" onClick={showPreviousPhoto}>
+            &#8249;
+          </button>
+          <figure className="about-image">
+            <img src={activePhoto.src} alt={activePhoto.alt} />
+          </figure>
+          <button className="carousel-arrow about-arrow" type="button" aria-label="Next photo" onClick={showNextPhoto}>
+            &#8250;
+          </button>
+          <div className="photo-indicators" aria-label="Photo selection">
+            {aboutPhotos.map((photo, index) => (
+              <button
+                key={photo.src}
+                className={index === activePhotoIndex ? "project-dot active" : "project-dot"}
+                type="button"
+                aria-label={`Show photo ${index + 1}`}
+                onClick={() => setActivePhotoIndex(index)}
+              />
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="section" id="projects">
@@ -166,32 +248,91 @@ function Portfolio() {
           <h2>Projects</h2>
         </div>
 
-        <div className="project-grid">
-          {projects.map((project) => (
-            <article className="project-card" key={project.title}>
-              <p className="project-type">{project.type}</p>
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <div className="tag-list" aria-label={`${project.title} technology stack`}>
-                {project.stack.map((item) => (
-                  <span key={item}>{item}</span>
+        <div className="project-showcase">
+          <button className="carousel-arrow" type="button" aria-label="Previous project" onClick={showPreviousProject}>
+            &#8249;
+          </button>
+
+          <article className="project-feature-card">
+            <p className="project-type">{activeProject.type}</p>
+            <h3>{activeProject.title}</h3>
+            {activeProject.title === "MamaMind" ||
+            activeProject.title === "Risk Evaluation Pipeline" ||
+            activeProject.title === "Professional Portfolio Website" ? (
+              <div className="project-detail-copy">
+                {activeProject.details.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
-              <strong>{project.impact}</strong>
-              <div className="project-actions">
-                <a className="project-link" href={project.link}>
-                  {project.linkLabel}
-                </a>
-                {project.demoLink && (
-                  <a className="project-link" href={project.demoLink}>
-                    {project.demoLabel}
-                  </a>
-                )}
-                <button className="project-detail-button" type="button" onClick={() => setSelectedProject(project)}>
-                  More details
+            ) : (
+              <p className="project-feature-description">{activeProject.description}</p>
+            )}
+            <div className="tag-list" aria-label={`${activeProject.title} technology stack`}>
+              {activeProject.stack.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+            <strong>{activeProject.impact}</strong>
+            <div className="project-actions">
+              {activeProject.architectureImage && activeProject.title === "Professional Portfolio Website" ? (
+                <button
+                  className="project-detail-button"
+                  type="button"
+                  onClick={() => setSelectedArchitectureProject(activeProject)}
+                >
+                  {activeProject.linkLabel}
                 </button>
-              </div>
-            </article>
+              ) : (
+                <a className="project-link" href={activeProject.link} target="_blank" rel="noreferrer">
+                  {activeProject.linkLabel}
+                </a>
+              )}
+              {activeProject.demoLink && (
+                <a className="project-link" href={activeProject.demoLink} target="_blank" rel="noreferrer">
+                  {activeProject.demoLabel}
+                </a>
+              )}
+              {activeProject.extraLinks?.map((item) => (
+                <a key={item.href} className="project-link" href={item.href} target="_blank" rel="noreferrer">
+                  {item.label}
+                </a>
+              ))}
+              {activeProject.architectureImage && (
+                activeProject.title !== "Professional Portfolio Website" && (
+                <button
+                  className="project-detail-button"
+                  type="button"
+                  onClick={() => setSelectedArchitectureProject(activeProject)}
+                >
+                  Full architecture
+                </button>
+                )
+              )}
+              {!activeProject.architectureImage && (
+                activeProject.title !== "Risk Evaluation Pipeline" &&
+                activeProject.title !== "Professional Portfolio Website" && (
+                  <button className="project-detail-button" type="button" onClick={() => setSelectedProject(activeProject)}>
+                    More details
+                  </button>
+                )
+              )}
+            </div>
+          </article>
+
+          <button className="carousel-arrow" type="button" aria-label="Next project" onClick={showNextProject}>
+            &#8250;
+          </button>
+        </div>
+
+        <div className="project-indicators" aria-label="Project selection">
+          {projects.map((project, index) => (
+            <button
+              key={project.title}
+              className={index === activeProjectIndex ? "project-dot active" : "project-dot"}
+              type="button"
+              aria-label={`Show ${project.title}`}
+              onClick={() => setActiveProjectIndex(index)}
+            />
           ))}
         </div>
       </section>
@@ -226,9 +367,39 @@ function Portfolio() {
                 <span key={item}>{item}</span>
               ))}
             </div>
-            <a className="button secondary" href={selectedProject.link}>
+            <a className="button secondary" href={selectedProject.link} target="_blank" rel="noreferrer">
               {selectedProject.linkLabel}
             </a>
+          </section>
+        </div>
+      )}
+
+      {selectedArchitectureProject && (
+        <div className="modal-backdrop" role="presentation" onClick={() => setSelectedArchitectureProject(null)}>
+          <section
+            className="project-modal architecture-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="architecture-modal-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              className="modal-close"
+              type="button"
+              aria-label="Close architecture"
+              onClick={() => setSelectedArchitectureProject(null)}
+            >
+              x
+            </button>
+            <p className="project-type">System architecture</p>
+            <h2 id="architecture-modal-title">{selectedArchitectureProject.title}</h2>
+            <figure className="modal-architecture large">
+              <img
+                src={selectedArchitectureProject.architectureImage}
+                alt={selectedArchitectureProject.architectureAlt}
+              />
+              <figcaption>{selectedArchitectureProject.title} full architecture</figcaption>
+            </figure>
           </section>
         </div>
       )}
@@ -238,11 +409,24 @@ function Portfolio() {
           <p className="eyebrow">What I bring</p>
           <h2>Skills</h2>
         </div>
-        <ul className="skill-list">
-          {skills.map((skill) => (
-            <li key={skill}>{skill}</li>
-          ))}
-        </ul>
+        <div className="skills-columns">
+          <div className="skills-group">
+            <h3>Hard Skills</h3>
+            <ul className="skill-list">
+              {hardSkills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="skills-group">
+            <h3>Soft Skills</h3>
+            <ul className="skill-list soft-skill-list">
+              {softSkills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section className="section experience" id="experience">
@@ -302,8 +486,7 @@ function Portfolio() {
       </section>
 
       <footer className="footer">
-        <p>Built with React and prepared for AWS Amplify Hosting.</p>
-        <a href="#home">Back to top</a>
+        <a href="#home">Barbara A F Caldeira</a>
       </footer>
     </main>
   );
