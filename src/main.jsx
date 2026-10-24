@@ -497,6 +497,11 @@ function Portfolio() {
               </div>
               <span className="experience-date">September 2026 - Present</span>
             </div>
+            <ul className="experience-points">
+              <li>Support the Practice Manager with daily operations, helping maintain efficient workflows and responsive patient services.</li>
+              <li>Assist with staff coordination and communication across administrative and clinical teams to support consistent service delivery.</li>
+              <li>Contribute to reviewing appointment demand, identifying process improvements, and maintaining accurate records and patient confidentiality.</li>
+            </ul>
           </article>
 
           <article className="experience-card">
