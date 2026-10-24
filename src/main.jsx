@@ -3,6 +3,21 @@ import { createRoot } from "react-dom/client";
 import "./styles.css";
 
 const hardSkills = [
+  "Python programming (pandas, NumPy)",
+  "Database design, ERDs and normalisation",
+  "SQL and MySQL (joins, views, KPIs)",
+  "SQLAlchemy database integration",
+  "Synthetic dataset development",
+  "Data preparation and validation",
+  "Exploratory data analysis",
+  "Ridge regression (scikit-learn)",
+  "Rolling time-series forecasting",
+  "Model evaluation (MAE, RMSE, WAPE, R²)",
+  "Capacity planning and cost estimation",
+  "Interactive dashboards (Streamlit)",
+  "Data visualisation (Plotly, Seaborn, Matplotlib)",
+  "Automated testing and debugging",
+  "Version control (Git, GitHub)",
   "React component development",
   "JavaScript application logic",
   "AWS serverless architecture",
@@ -42,6 +57,36 @@ const aboutPhotos = [
 ];
 
 const projects = [
+  {
+    title: "PracticeHUB",
+    type: "GP Practice Management Intelligence",
+    showDetailsInline: true,
+    link: "https://github.com/barbaraafcaldeira/PracticeHUB",
+    linkLabel: "View GitHub repository",
+    demoLink: "/videos/practicehub-demo.mp4",
+    demoLabel: "Demo",
+    description:
+      "An interactive dashboard that helps GP Practice Managers turn appointment activity into demand forecasts, clinical capacity estimates, and staffing cost scenarios.",
+    stack: [
+      "Python",
+      "MySQL",
+      "SQLAlchemy",
+      "pandas",
+      "NumPy",
+      "scikit-learn",
+      "Streamlit",
+      "Plotly",
+      "Seaborn",
+      "Matplotlib",
+    ],
+    impact: "Connected database design, demand forecasting, and capacity planning to help explore practical staffing decisions.",
+    status: "Built with synthetic data for a fictional practice. GitHub repository currently private; dashboard demonstrated through a recorded walkthrough.",
+    details: [
+      "How can a GP practice plan ahead when appointment demand keeps changing? PracticeHUB helps Practice Managers explore historical activity, forecast next month's same-day and routine requests, and estimate the additional clinical sessions and staffing costs needed to respond. The project uses three years of synthetic activity for Blueberry Medical Centre, a fictional practice with 10,000 patients and five GPs.",
+      "I designed the relational database and appointment workflow, developed and analysed the synthetic dataset with AI assistance, and evaluated forecasting approaches. Python, MySQL, and SQLAlchemy supported the data workflow, with pandas and NumPy for analysis and scikit-learn for forecasting evaluation. I used VS Code and MySQL Workbench for development and database administration, with Git and GitHub for version control.",
+      "I built the interactive dashboard in Streamlit with historical analysis, monthly data entry, demand forecasts, and a capacity-planning calculator. Plotly, Seaborn, and Matplotlib supported visual exploration and presentation of the data, bringing the analysis together in a tool focused on everyday practice planning.",
+    ],
+  },
   {
     title: "MamaMind",
     type: "Full-stack AWS wellbeing app",
@@ -256,7 +301,7 @@ function Portfolio() {
           <article className="project-feature-card">
             <p className="project-type">{activeProject.type}</p>
             <h3>{activeProject.title}</h3>
-            {activeProject.title === "MamaMind" ||
+            {activeProject.showDetailsInline || activeProject.title === "MamaMind" ||
             activeProject.title === "Risk Evaluation Pipeline" ||
             activeProject.title === "Professional Portfolio Website" ? (
               <div className="project-detail-copy">
@@ -273,6 +318,7 @@ function Portfolio() {
               ))}
             </div>
             <strong>{activeProject.impact}</strong>
+            {activeProject.status && <p className="project-status">{activeProject.status}</p>}
             <div className="project-actions">
               {activeProject.architectureImage && activeProject.title === "Professional Portfolio Website" ? (
                 <button
@@ -282,15 +328,20 @@ function Portfolio() {
                 >
                   {activeProject.linkLabel}
                 </button>
-              ) : (
+              ) : activeProject.link ? (
                 <a className="project-link" href={activeProject.link} target="_blank" rel="noreferrer">
                   {activeProject.linkLabel}
                 </a>
-              )}
+              ) : null}
               {activeProject.demoLink && (
                 <a className="project-link" href={activeProject.demoLink} target="_blank" rel="noreferrer">
                   {activeProject.demoLabel}
                 </a>
+              )}
+              {activeProject.demoLabel && !activeProject.demoLink && (
+                <button className="project-link" type="button" disabled title="Demo video link coming soon">
+                  {activeProject.demoLabel}
+                </button>
               )}
               {activeProject.extraLinks?.map((item) => (
                 <a key={item.href} className="project-link" href={item.href} target="_blank" rel="noreferrer">
@@ -308,7 +359,7 @@ function Portfolio() {
                 </button>
                 )
               )}
-              {!activeProject.architectureImage && (
+              {!activeProject.architectureImage && !activeProject.showDetailsInline && (
                 activeProject.title !== "Risk Evaluation Pipeline" &&
                 activeProject.title !== "Professional Portfolio Website" && (
                   <button className="project-detail-button" type="button" onClick={() => setSelectedProject(activeProject)}>
@@ -438,6 +489,16 @@ function Portfolio() {
         </div>
 
         <div className="experience-list">
+          <article className="experience-card">
+            <div className="experience-header">
+              <div>
+                <h3>Assistant Practice Manager</h3>
+                <p className="experience-company">Church Elm Lane Medical Practice</p>
+              </div>
+              <span className="experience-date">September 2026 - Present</span>
+            </div>
+          </article>
+
           <article className="experience-card">
             <div className="experience-header">
               <div>

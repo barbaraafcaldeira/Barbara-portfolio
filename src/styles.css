@@ -371,6 +371,11 @@ h3 {
   border: 1px solid rgba(15, 107, 84, 0.24);
 }
 
+.project-link:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
 .project-detail-button {
   cursor: pointer;
   background: #0f6b54;
